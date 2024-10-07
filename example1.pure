@@ -1,0 +1,19 @@
+using system;
+
+expand = reduce with
+    (a+b)*c = a*c+b*c;
+    a*(b+c) = a*b+a*c;
+end;
+
+factor = reduce with
+    a*c+b*c = (a+b)*c;
+    a*b+a*c = a*(b+c);
+end;
+
+f = (a+b)*2;
+g = expand f;
+h = factor g;
+
+(puts.str) f;
+(puts.str) g;
+(puts.str) h;
